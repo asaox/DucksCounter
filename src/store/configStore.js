@@ -25,6 +25,7 @@ const enhancer = composeEnhancers(
   applyMiddleware(logger)
 );
 
+
 export default function createStore() {
   const store = reduxCreateStore(
     combineReducers({
