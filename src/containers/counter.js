@@ -1,5 +1,7 @@
 import { connect } from "react-redux"
 import * as module from "../modules/counter"
+
+//Conponent Class
 import Counter from "../components/counter"
 
 // mapStateToProps

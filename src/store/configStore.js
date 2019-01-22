@@ -17,7 +17,7 @@ export default function createStore() {
   const store = reduxCreateStore(
     combineReducers({
       // Counter
-      counter: counterReducer
+      counter: counterReducer,
     }),
     applyMiddleware(logger)
   )

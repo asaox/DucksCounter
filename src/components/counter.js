@@ -1,5 +1,7 @@
 import React from "react"
 
+// 描画部分のみを記述
+
 // Component Class
 export default class Counter extends React.Component {
   render() {

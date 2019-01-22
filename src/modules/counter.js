@@ -11,12 +11,13 @@ export function decrement() {
   return { type: DECREMENT }
 }
 
-// reducer
+// state
 const initialState = {
   state: 0,
   count: 0
 }
 
+// reducer
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case INCREMENT:
