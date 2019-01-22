@@ -1,2 +1,0 @@
-# DucksCounter
-Created with CodeSandbox
