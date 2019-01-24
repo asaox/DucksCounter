@@ -12,7 +12,7 @@ describe("Counter", () => {
     expect(store(undefined, {})).toEqual({ count: 0, state: 0 })
   })
 
-  it('this.state.count', () => {
+  it('should save state from setState', () => {
     const wrapper = shallow(<App />);
     wrapper.setState({
       count: 2,
