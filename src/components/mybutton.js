@@ -7,10 +7,10 @@ import PropTypes from "prop-types"
 export default class MyButton extends React.Component {
   render() {
     const { onclick, cls, children } = this.props
-    return (
-      <button onClick={onclick} className={cls}>
-        {children}
-      </button>
+    return(
+        <button onClick={onclick}className={cls}>
+            {children}
+        </button>
     )
   }
 }
@@ -18,5 +18,5 @@ export default class MyButton extends React.Component {
 MyButton.PropTypes = {
   onclick: PropTypes.func,
   cls: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
