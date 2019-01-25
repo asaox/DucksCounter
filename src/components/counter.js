@@ -11,8 +11,8 @@ export default class Counter extends React.Component {
     return (
       <div id="CounterDiv">
         <h2 className="CounterTitle">Counter</h2>
-        <MyButton onclick={increment} cls="incrButton" label="increment" />
-        <MyButton onclick={decrement} cls="decrButton" label="decrement" />
+        <MyButton onclick={increment} cls="incrButton" children="increment" />
+        <MyButton onclick={decrement} cls="decrButton">decrement</MyButton>
         <div className="CounterVaule">Count: {counter.count}</div>
       </div>
     )
