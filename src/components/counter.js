@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import MyButton from "/src/components/mybutton"
+import MyButton from "./mybutton"
 
 // 描画部分のみを記述
 
@@ -12,7 +12,10 @@ export default class Counter extends React.Component {
       <div id="CounterDiv">
         <h2 className="CounterTitle">Counter</h2>
         <MyButton onclick={increment} cls="incrButton" children="increment" />
-        <MyButton onclick={decrement} cls="decrButton">decrement</MyButton>
+
+        <MyButton onclick={decrement} cls="decrButton">
+          decrement
+        </MyButton>
         <div className="CounterVaule">Count: {counter.count}</div>
       </div>
     )
