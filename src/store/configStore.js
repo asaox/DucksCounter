@@ -4,12 +4,18 @@ import {
   combineReducers,
   compose
 } from "redux"
-// import logger from "redux-logger"
-import { createLogger } from "redux-logger"
-const logger = createLogger({
-  collapsed: true,
-  diff: true
-})
+
+const middlewares = [];
+
+if (process.env.NODE_ENV !== `production`) {
+  // only develop
+  const Logger = require(`redux-logger`);
+  const logger = Logger.createLogger({
+    collapsed: true,
+    diff: true
+  })
+  middlewares.push(logger);
+}
 
 // Counter
 import counterReducer from "../modules/counter"
@@ -22,7 +28,7 @@ const composeEnhancers =
     }) : compose;
 
 const enhancer = composeEnhancers(
-  applyMiddleware(logger)
+  applyMiddleware(...middlewares)
 );
 
 
@@ -32,7 +38,7 @@ export default function createStore() {
       // Counter
       counter: counterReducer,
     }),
-    applyMiddleware(logger),
+    applyMiddleware(...middlewares),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
   return store
