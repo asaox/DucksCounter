@@ -1,4 +1,6 @@
 import React from "react"
+import PropTypes from "prop-types"
+import MyButton from "./mybutton"
 
 // 描画部分のみを記述
 
@@ -9,15 +11,18 @@ export default class Counter extends React.Component {
     return (
       <div id="CounterDiv">
         <h2 className="CounterTitle">Counter</h2>
-        <button onClick={increment} className="incrButton">
-          increment
-        </button>
-        <button onClick={decrement} className="decrButton">
+        <MyButton onclick={increment} cls="incrButton" children="increment" />
+        <MyButton onclick={decrement} cls="decrButton">
           decrement
-        </button>
+        </MyButton>
         <div className="CounterVaule">Count: {counter.count}</div>
       </div>
     )
   }
 }
 
+Counter.PropTypes = {
+  increment: PropTypes.func,
+  decrement: PropTypes.func,
+  counter: PropTypes.object
+}
