@@ -1,13 +1,14 @@
 {
   "name": "duckscounter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ducks test",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.7.1",
     "jest": "23.6.0",
+    "mybutton": "1.0.1",
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-redux": "6.0.0",
@@ -22,5 +23,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
