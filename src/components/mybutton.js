@@ -1,35 +1,35 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import { withStyles } from "@material-ui/core/styles"
+import Button from "@material-ui/core/Button"
 
 // 描画部分のみを記述
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing.unit
   },
   input: {
-    display: 'none',
-  },
-});
+    display: "none"
+  }
+})
 
 // Component Class
 class MyButton extends React.Component {
   render() {
     const { onclick, cls, children } = this.props
-    return(
-        <Button onClick={onclick} className={cls} color="primary" >
-            {children}
-        </Button>
+    return (
+      <Button onClick={onclick} className={cls} color="primary">
+        {children}
+      </Button>
     )
   }
 }
 
-MyButton.PropTypes = {
+MyButton.propTypes = {
   onclick: PropTypes.func.isRequired,
   cls: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default withStyles(styles)(MyButton)
