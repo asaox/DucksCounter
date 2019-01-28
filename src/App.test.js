@@ -11,7 +11,7 @@ describe("Counter", () => {
   it("should return the initial state", () => {
     expect(
       store( undefined, {} )
-    ).toEqual( {count: 0, state: 0} )
+    ).toEqual( {count: 0} )
   })
   it("should save state from setState", () => {
     const wrapper = shallow(<App />)

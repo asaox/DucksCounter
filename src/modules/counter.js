@@ -13,7 +13,6 @@ export function decrement() {
 
 // state
 const initialState = {
-  state: 0,
   count: 0
 }
 
