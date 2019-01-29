@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== `production`) {
   // only develop
   const Logger = require(`redux-logger`)
   const logger = Logger.createLogger({
-    collapsed: true,
+  //  collapsed: true,
     diff: true
   })
   middlewares.push(logger)

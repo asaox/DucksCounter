@@ -9,13 +9,13 @@ const initialState = {
 const INCREMENT = "COUNTER_INCREMENT"
 const DECREMENT = "COUNTER_DECREMENT"
 
-// action creator
+// action creator (use createActions)
 export const { increment, decrement } = createActions({
   INCREMENT: () => ({}),
   DECREMENT: () => ({}),
 })
 
-// reducer
+// reducer (use handleActions)
 export default handleActions({
   [increment]: state => ({
     ...state,
@@ -23,11 +23,12 @@ export default handleActions({
   }),
   [decrement]: state => ({
     ...state,
-    count: state.count - 1    
+  count: state.count - 1    
   })
 }, initialState)
 
 /*
+// action creator
 export function increment() {
   return { type: INCREMENT }
 }
@@ -35,6 +36,7 @@ export function decrement() {
   return { type: DECREMENT }
 }
 
+// reducer
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case INCREMENT:
