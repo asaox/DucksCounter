@@ -23,7 +23,7 @@ export default handleActions({
   }),
   [decrement]: state => ({
     ...state,
-  count: state.count - 1    
+    count: state.count - 1    
   })
 }, initialState)
 
