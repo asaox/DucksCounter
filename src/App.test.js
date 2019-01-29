@@ -19,13 +19,13 @@ describe("Counter", () => {
 
   it("should create an action to increment", () => {
     const type = "COUNTER_INCREMENT"
-    const expectedAction = { type }
+    const expectedAction = { type, "payload": "COUNTER_INCREMENT", }
     expect(actions.increment(type)).toEqual(expectedAction)
   })
 
   it("should create an action to decrement", () => {
     const type = "COUNTER_DECREMENT"
-    const expectedAction = { type }
+    const expectedAction = { type, "payload": "COUNTER_DECREMENT", }
     expect(actions.decrement(type)).toEqual(expectedAction)
   })
 

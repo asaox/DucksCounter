@@ -26,6 +26,7 @@ class MyButton extends React.Component {
   }
 }
 
+// parameter defines
 MyButton.propTypes = {
   onclick: PropTypes.func.isRequired,
   cls: PropTypes.string.isRequired,

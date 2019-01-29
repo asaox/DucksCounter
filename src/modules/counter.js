@@ -1,4 +1,8 @@
-import { createActions, handleActions } from "redux-actions"
+import { 
+//  createActions, 
+  handleActions,
+  createAction
+} from "redux-actions"
 
 // state
 const initialState = {
@@ -9,19 +13,17 @@ const initialState = {
 const INCREMENT = "COUNTER_INCREMENT"
 const DECREMENT = "COUNTER_DECREMENT"
 
-// action creator (use createActions)
-export const { increment, decrement } = createActions({
-  INCREMENT: () => ({}),
-  DECREMENT: () => ({}),
-})
+// action creator (use createAction)
+export const increment = createAction(INCREMENT)
+export const decrement = createAction(DECREMENT)
 
 // reducer (use handleActions)
 export default handleActions({
-  [increment]: state => ({
+  [INCREMENT]: state => ({
     ...state,
     count: state.count + 1
   }),
-  [decrement]: state => ({
+  [DECREMENT]: state => ({
     ...state,
     count: state.count - 1    
   })
@@ -35,6 +37,12 @@ export function increment() {
 export function decrement() {
   return { type: DECREMENT }
 }
+
+// action creator (use createActions)
+export const { decrement } = createActions({
+  INCREMENT: () => ({}),
+  DECREMENT: () => ({}),
+})
 
 // reducer
 export default function reducer(state = initialState, action) {

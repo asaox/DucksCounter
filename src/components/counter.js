@@ -22,6 +22,7 @@ export default class Counter extends React.Component {
   }
 }
 
+// parameter defines
 Counter.propTypes = {
   increment: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,
