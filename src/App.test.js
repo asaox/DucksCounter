@@ -21,24 +21,24 @@ describe("Counter", () => {
 
   it("should create an action to increment", () => {
     const type = "COUNTER_INCREMENT"
-    const expectedAction = { type, "payload": "COUNTER_INCREMENT", }
+    const expectedAction = { type, "payload": {amount: 1}, }
     expect(actions.increment(type)).toEqual(expectedAction)
   })
 
   it("should create an action to decrement", () => {
     const type = "COUNTER_DECREMENT"
-    const expectedAction = { type, "payload": "COUNTER_DECREMENT", }
+    const expectedAction = { type, "payload": {amount: -1}, }
     expect(actions.decrement(type)).toEqual(expectedAction)
   })
 
   it("should handle INCREMENT", () => {
-    expect(store({ count: 1 }, { type: "COUNTER_INCREMENT" })).toEqual({
+    expect(store({ count: 1 }, { type: "COUNTER_INCREMENT", payload: {amount: 1} })).toEqual({
       count: 2
     })
   })
 
   it("should handle DECREMENT", () => {
-    expect(store({ count: 3 }, { type: "COUNTER_DECREMENT" })).toEqual({
+    expect(store({ count: 3 }, { type: "COUNTER_DECREMENT", payload: {amount: -1} })).toEqual({
       count: 2
     })
   })
