@@ -5,6 +5,8 @@ import Adapter from "enzyme-adapter-react-16"
 import store, * as actions from "./modules/counter"
 import App from "./App.js"
 
+// test
+
 Enzyme.configure({ adapter: new Adapter() })
 
 describe("Counter", () => {

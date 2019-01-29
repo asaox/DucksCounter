@@ -18,6 +18,7 @@ if (process.env.NODE_ENV !== `production`) {
   middlewares.push(logger)
 }
 
+// debug 用
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
@@ -25,8 +26,11 @@ const composeEnhancers =
       })
     : compose
 
+// debug 用
 const enhancer = composeEnhancers(applyMiddleware(...middlewares))
 
+// store定義
+// middleware, reducerなどを関連付ける
 export default function createStore() {
   const store = reduxCreateStore(
     rootReducer,

@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import MyButton from "./mybutton"
 
-// 描画部分のみを記述
-
 // Component Class
+// 画面表示するコンポーネント
+// カスタマイズする場合などはパーツに分割する
 export default class Counter extends React.Component {
   render() {
     const { increment, decrement, counter } = this.props
@@ -22,7 +22,8 @@ export default class Counter extends React.Component {
   }
 }
 
-// parameter defines
+// PropTypes
+// プロパティ(引き継ぎ情報)の型定義
 Counter.propTypes = {
   increment: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,

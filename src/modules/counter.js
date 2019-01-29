@@ -5,11 +5,13 @@ import {
 } from "redux-actions"
 
 // state
+// ステートの初期値
 const initialState = {
   count: 0
 }
 
 // action type
+// コンポーネントに対するアクションの定義
 const INCREMENT = "COUNTER_INCREMENT"
 const DECREMENT = "COUNTER_DECREMENT"
 
@@ -18,6 +20,7 @@ export const increment = createAction(INCREMENT)
 export const decrement = createAction(DECREMENT)
 
 // reducer (use handleActions)
+// リデューサーの定義、アクションごとに状態をどう変更するかの定義
 export default handleActions({
   [INCREMENT]: state => ({
     ...state,
