@@ -39,7 +39,7 @@ export function decrement() {
 }
 
 // action creator (use createActions)
-export const { decrement } = createActions({
+export const { increment, decrement } = createActions({
   INCREMENT: () => ({}),
   DECREMENT: () => ({}),
 })
