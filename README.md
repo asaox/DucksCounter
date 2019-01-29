@@ -1,7 +1,8 @@
 # DucksCounter
 Created with CodeSandbox
+Ducks sample
 
-# Ducksのサンプル
+# src 以下の構成
 
 ## components
 画面表示コンポーネント定義を記述
