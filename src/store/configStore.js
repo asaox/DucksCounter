@@ -1,5 +1,5 @@
 import {
-  createStore as reduxCreateStore,
+  createStore,
   applyMiddleware,
   compose
 } from "redux"
@@ -31,8 +31,8 @@ const enhancer = composeEnhancers(applyMiddleware(...middlewares))
 
 // store定義
 // middleware, reducerなどを関連付ける
-export default function createStore() {
-  const store = reduxCreateStore(
+export default function configStore() {
+  const store = createStore(
     rootReducer,
     applyMiddleware(...middlewares),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

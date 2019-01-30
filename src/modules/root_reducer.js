@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from "redux"
 import counter from "./counter"
 
 // reducerのとりまとめ
@@ -6,7 +6,7 @@ import counter from "./counter"
 // configStoreで代表して使われる
 
 const rootReducer = combineReducers({
-    counter,
-});
+  counter
+})
 
-export default rootReducer;
+export default rootReducer

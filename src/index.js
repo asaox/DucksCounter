@@ -7,7 +7,6 @@ import { Provider } from "react-redux"
 import configStore from "./store/configStore"
 
 // メイン処理
-
 const store = configStore()
 
 ReactDOM.render(

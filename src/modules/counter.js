@@ -1,8 +1,4 @@
-import { 
-  handleActions,
-  createAction,
-  combineActions,
-} from "redux-actions"
+import { handleActions, createAction, combineActions } from "redux-actions"
 
 // state
 // ステートの初期値
@@ -16,17 +12,20 @@ const INCREMENT = "COUNTER_INCREMENT"
 const DECREMENT = "COUNTER_DECREMENT"
 
 // action creator (use createAction)
-export const increment = createAction(INCREMENT, amount => ({amount:  1}))
-export const decrement = createAction(DECREMENT, amount => ({amount: -1}))
+export const increment = createAction(INCREMENT, amount => ({ amount: 1 }))
+export const decrement = createAction(DECREMENT, amount => ({ amount: -1 }))
 
 // reducer (use handleActions)
 // リデューサーの定義、アクションごとに状態をどう変更するかの定義
-export default handleActions({
-  [combineActions(INCREMENT, DECREMENT)]: (state, action) => ({
-    ...state,
-    count: state.count + action.payload.amount
-  }),
-}, initialState)
+export default handleActions(
+  {
+    [combineActions(INCREMENT, DECREMENT)]: (state, action) => ({
+      ...state,
+      count: state.count + action.payload.amount
+    })
+  },
+  initialState
+)
 
 /*
 // action creator
