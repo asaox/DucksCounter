@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import counter from "./counter"
 
-// リデューサーのとりまとめ
+// reducerのとりまとめ
 // modulesで定義したクラスのreducerを定義する
 // configStoreで代表して使われる
 
