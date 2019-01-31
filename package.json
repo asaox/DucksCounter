@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Ducks test",
   "keywords": [],
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "dependencies": {
     "@material-ui/core": "3.9.0",
     "enzyme": "3.8.0",
