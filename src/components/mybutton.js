@@ -26,7 +26,8 @@ class MyButton extends React.Component {
   }
 }
 
-// parameter defines
+// PropTypes
+// プロパティ(引き継ぎ情報)の型定義
 MyButton.propTypes = {
   onclick: PropTypes.func.isRequired,
   cls: PropTypes.string.isRequired,

@@ -12,7 +12,6 @@ export default class Counter extends React.Component {
       <div id="CounterDiv">
         <h2 className="CounterTitle">Counter</h2>
         <MyButton onclick={increment} cls="incrButton" children="increment" />
-
         <MyButton onclick={decrement} cls="decrButton">
           decrement
         </MyButton>
