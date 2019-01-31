@@ -1,4 +1,8 @@
-import { handleActions, createAction, combineActions } from "redux-actions"
+import { 
+  handleActions,
+  createAction,
+  combineActions 
+} from "redux-actions"
 
 // state
 // ステートの初期値
