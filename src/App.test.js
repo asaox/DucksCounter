@@ -3,7 +3,7 @@ import Enzyme from "enzyme"
 import { shallow, mount, render } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
 import store, * as actions from "./modules/counter"
-import App from "./App.js"
+import App from "./App"
 
 // test
 
@@ -13,6 +13,7 @@ describe("Counter", () => {
   it("should return the initial state", () => {
     expect(store(undefined, {})).toEqual({ count: 0 })
   })
+  
   it("should save state from setState", () => {
     const wrapper = shallow(<App />)
     wrapper.setState({ count: 2 })
