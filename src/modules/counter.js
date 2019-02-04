@@ -16,7 +16,7 @@ const INCREMENT = "COUNTER_INCREMENT"
 const DECREMENT = "COUNTER_DECREMENT"
 
 // action creator (use createAction)
-export const increment = createAction(INCREMENT, amount => ({ amount: 1 }))
+export const increment = createAction(INCREMENT, amount => ({ amount:  1 }))
 export const decrement = createAction(DECREMENT, amount => ({ amount: -1 }))
 
 // reducer (use handleActions)
