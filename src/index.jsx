@@ -9,6 +9,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import App from "./App"
 import configureStore, { history } from "./configureStore"
 import withTracker from "./components/with_tracker"
+import NoMatch from "./components/no_match"
 import "./styles.css"
 
 // メイン処理
@@ -23,17 +24,13 @@ const muiTheme = getMuiTheme({
 
 const store = configureStore(history)
 
-export const NoMatch = ({ location }) => (
-  <div><h3>No match for <code>{location.pathname}</code></h3></div>
-)
-
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider muiTheme={muiTheme}>
       <ConnectedRouter history={history}>
         <Switch>
           <Route exact path="/" component={withTracker(App, {userId : 123})} />
-          <Route component={NoMatch}/>
+          <Route component={withTracker(NoMatch, {userId : 456})}/>
         </Switch>
       </ConnectedRouter> 
     </MuiThemeProvider>
