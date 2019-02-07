@@ -3,10 +3,13 @@ import {
   applyMiddleware,
   compose
 } from "redux"
-import { connectRouter, routerMiddleware } from 'connected-react-router'
+import { 
+  connectRouter, 
+  routerMiddleware
+} from 'connected-react-router'
 import { createBrowserHistory } from 'history'
 import rootReducer from "./modules/root_reducer"
-
+import * as actionCreators from "./modules/counter"
 
 const middlewares = []
 
@@ -21,29 +24,24 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 // debug 用
-/*
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
         // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+        actionCreators,
       })
     : compose
-
-// debug 用
 const enhancer = composeEnhancers(applyMiddleware(...middlewares))
-*/
 
 export const history = createBrowserHistory()
+middlewares.push(routerMiddleware(history))
 
 // store定義
 // middleware, reducerなどを関連付ける
 export default function configureStore(preloadedState) {
-  middlewares.push(routerMiddleware(history))
-  const store = createStore(
+  return createStore(
     rootReducer(history),
     preloadedState,
-    applyMiddleware(...middlewares),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    enhancer,
   )
-  return store
 }
