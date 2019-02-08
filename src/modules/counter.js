@@ -20,7 +20,8 @@ export const increment = createAction(INCREMENT, amount => ({ amount:  1 }))
 export const decrement = createAction(DECREMENT, amount => ({ amount: -1 }))
 
 // reducer (use handleActions)
-// リデューサーの定義、アクションごとに状態をどう変更するかの定義
+// 
+
 export default handleActions(
   {
     [combineActions(INCREMENT, DECREMENT)]: (state, action) => ({

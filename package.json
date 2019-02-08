@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.jsx",
   "dependencies": {
+    "@f/handle-actions": "1.1.2",
     "@material-ui/core": "3.9.0",
     "connected-react-router": "6.2.2",
     "enzyme": "3.8.0",
