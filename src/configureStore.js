@@ -3,10 +3,7 @@ import {
   applyMiddleware,
   compose
 } from "redux"
-import { 
-  connectRouter, 
-  routerMiddleware
-} from 'connected-react-router'
+import { routerMiddleware } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
 import rootReducer from "./modules/root_reducer"
 import * as actionCreators from "./modules/counter"
@@ -29,6 +26,9 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
         // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
         actionCreators,
+        serialize: true,
+        trace: true,
+        traceLimit: 25,
       })
     : compose
 const enhancer = composeEnhancers(applyMiddleware(...middlewares))

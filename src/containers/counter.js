@@ -1,5 +1,6 @@
 import { connect } from "react-redux"
-import * as module from "../modules/counter"
+import { bindActionCreators } from "redux"
+import * as actions from "../modules/counter"
 
 // Conponent Class
 // コンポーネントクラスのインポート
@@ -16,10 +17,7 @@ const mapStateToProps = state => {
 // mapDispatchToProps
 // Action の dispatch
 const mapDispatchToProps = dispatch => {
-  return {
-    increment: () => dispatch(module.increment()),
-    decrement: () => dispatch(module.decrement())
-  }
+  return bindActionCreators( actions, dispatch ) 
 }
 
 // Connect
