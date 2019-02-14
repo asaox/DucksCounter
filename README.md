@@ -5,23 +5,27 @@ Ducks sample
 # src 以下の構成
 
 ## components
-画面表示コンポーネント定義を記述
+コンポーネント(画面構成パーツ)定義を記述
+- ファイル構成はパーツ単位
 - componentクラス定義
 - proptypes
 
 ## containers
-コンテナ定義を記述
+コンテナ(Connectするコンポーネント)定義を記述
 - connect
-- maptoprops
-- mapdispattchtoprops
+- mapStatetoProps
+- mapDispatchtoProps
 
 ## modules
 Action Type, Action Creater, Reducerを記述
+ファイル構成はメニュー単位
 
 ### root_reducer
 Reducerの取りまとめ
 combined_reducer
 
 ## store
-store,middlewareなどの設定
 基本的に変更は不要
+運用環境、開発環境を分離
+store,middlewareの設定
+log, debug環境の設定
