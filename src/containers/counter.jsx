@@ -1,10 +1,35 @@
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
+import React from "react"
+import PropTypes from "prop-types"
+import MyButton from "../components/mybutton"
 import * as actions from "../modules/counter"
 
-// Conponent Class
+// Component Class
 // コンポーネントクラスのインポート
-import Counter from "../components/counter"
+export class Counter extends React.Component {
+  render() {
+    const { increment, decrement, counter } = this.props
+    return (
+      <div id="CounterDiv">
+        <h2 className="CounterTitle">Counter</h2>
+        <MyButton onclick={increment} cls="incrButton" children="increment" />
+        <MyButton onclick={decrement} cls="decrButton">
+          decrement
+        </MyButton>
+        <div className="CounterVaule">Count: {counter.count}</div>
+      </div>
+    )
+  }
+}
+
+// PropTypes
+// プロパティ(引き継ぎ情報)の型定義
+Counter.propTypes = {
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+  counter: PropTypes.object.isRequired
+}
 
 // mapStateToProps
 // State -> Props
