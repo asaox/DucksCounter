@@ -22,7 +22,7 @@ const muiTheme = getMuiTheme({
   },
 })
 
-const store = configureStore(history)
+const store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>

@@ -31,17 +31,18 @@ const composeEnhancers =
         traceLimit: 25,
       })
     : compose
-const enhancer = composeEnhancers(applyMiddleware(...middlewares))
+
 
 export const history = createBrowserHistory()
 middlewares.push(routerMiddleware(history))
+const enhancer = composeEnhancers(applyMiddleware(...middlewares))
 
 // store定義
 // middleware, reducerなどを関連付ける
-export default function configureStore(preloadedState) {
+// export default function configureStore(preloadedState) {
+export default function configureStore() {
   return createStore(
     rootReducer(history),
-    preloadedState,
     enhancer,
   )
 }
